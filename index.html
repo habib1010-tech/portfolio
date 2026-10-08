@@ -10,11 +10,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
   <div class="loader">
     <div class="loader-text" id="loader-text">Loading <span class="dot">.</span></div>
     <div class="loader-progress"></div>
@@ -26,10 +31,16 @@
     <div class="nav-container">
       <div class="logo">HA<span>.</span></div>
       <div class="nav-links">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link btn-outline">Contact Me</a>
+        <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+        <a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a>
+        <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
+        <a href="#contact" class="nav-link btn-outline" data-i18n="nav.contact">Contact Me</a>
+        
+        <div class="lang-switcher magnetic">
+          <button id="btn-en" class="lang-btn active">EN</button>
+          <span>/</span>
+          <button id="btn-fr" class="lang-btn">FR</button>
+        </div>
       </div>
       <div class="mobile-toggle">
         <i class='bx bx-menu'></i>
@@ -40,22 +51,30 @@
   <main>
     <section id="hero" class="hero">
       <div class="hero-content">
-        <div class="hero-badge">Available for opportunities</div>
+        <div class="hero-badge animate-up" data-i18n="hero.badge">Available for opportunities</div>
         <h1 class="hero-title">
-          <span class="hero-title-line">Habib</span>
-          <span class="hero-title-line accent-gradient">Azzabou</span>
+          <span class="hero-title-line animate-up" data-i18n="hero.title.1">Habib</span>
+          <span class="hero-title-line accent-gradient animate-up" data-i18n="hero.title.2">Azzabou</span>
         </h1>
-        <p class="hero-subtitle">
+        <p class="hero-subtitle animate-up" data-i18n="hero.subtitle">
           Fullstack Software Engineer building scalable, data-driven, and AI-enhanced platforms.
         </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">
+        <div class="hero-cta animate-up">
+          <a href="#projects" class="btn btn-primary magnetic" data-i18n="hero.cta.work">
             Explore My Work
-            <i class='bx bx-right-arrow-alt'></i>
           </a>
-          <a href="#contact" class="btn btn-secondary">
+          <a href="#contact" class="btn btn-secondary magnetic" data-i18n="hero.cta.contact">
             Get In Touch
           </a>
+          <div class="resume-download-wrapper">
+             <button class="btn btn-outline" id="download-cv-btn">
+               <i class='bx bx-download'></i> <span data-i18n="hero.cta.resume">Download Resume</span>
+             </button>
+             <div class="resume-dropdown" id="resume-dropdown">
+                <a href="./CV_Habib_Azzabou_EN.pdf" download="CV_Habib_Azzabou_EN.pdf">English (EN)</a>
+                <a href="./CV_Habib_Azzabou_FR.pdf" download="CV_Habib_Azzabou_FR.pdf">French (FR)</a>
+             </div>
+          </div>
         </div>
       </div>
       <div class="scroll-indicator">
@@ -65,37 +84,69 @@
       </div>
     </section>
 
+    <div class="marquee-container">
+      <div class="marquee-content">
+        <span class="marquee-text">FULLSTACK SOFTWARE ENGINEER ✷ AI ARCHITECT ✷ CREATIVE DEVELOPER ✷ PROBLEM SOLVER ✷ </span>
+        <span class="marquee-text">FULLSTACK SOFTWARE ENGINEER ✷ AI ARCHITECT ✷ CREATIVE DEVELOPER ✷ PROBLEM SOLVER ✷ </span>
+      </div>
+    </div>
+
     <section id="about" class="about section-padding">
-      <div class="container split-layout">
-        <div class="section-heading sticky-col">
-          <h2 class="section-title">01. About Me</h2>
-          <p class="section-desc">
-            With 5 years of experience spanning North America and Europe, I specialize in shipping end-to-end features for fully remote, agile teams. From robust FastAPI and .NET backends to highly interactive modern frontends, I focus on code quality, automated testing, and scalable cloud architectures.
-          </p>
+      <div class="container split-layout align-center">
+        <div class="about-visual sticky-col">
+          <div class="profile-card tilt-effect">
+            <img src="./profile.png" alt="Habib Azzabou Profile" class="profile-img">
+            <div class="profile-glow"></div>
+          </div>
         </div>
         <div class="skills-col">
+          <div class="section-heading reveal-text" style="margin-bottom: 2rem;">
+            <h2 class="section-title" data-i18n="about.title">01. About Me</h2>
+            <p class="section-desc" data-i18n="about.desc">
+              With 5 years of experience surviving production deployments across North America and Europe, I specialize in shipping features that (usually) work on the first try.
+            </p>
+          </div>
           <div class="skill-category">
-            <h3><i class='bx bx-server'></i> Backend & APIs</h3>
+            <h3 data-i18n="about.backend"><i class='bx bx-server'></i> Backend & APIs</h3>
             <div class="skill-tags">
-              <span>FastAPI</span><span>Python</span><span>.NET 7</span><span>C#</span><span>Django</span><span>Supabase</span><span>PostgreSQL</span><span>Snowflake</span><span>REST</span><span>GraphQL</span>
+              <span><i class="devicon-fastapi-plain colored"></i> FastAPI</span>
+              <span><i class="devicon-python-plain colored"></i> Python</span>
+              <span><i class="devicon-dotnetcore-plain colored"></i> .NET 7</span>
+              <span><i class="devicon-django-plain colored"></i> Django</span>
+              <span><i class="devicon-supabase-plain colored"></i> Supabase</span>
+              <span><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
+              <span><i class="devicon-graphql-plain colored"></i> GraphQL</span>
             </div>
           </div>
           <div class="skill-category">
-            <h3><i class='bx bx-window-alt'></i> Frontend</h3>
+            <h3 data-i18n="about.frontend"><i class='bx bx-window-alt'></i> Frontend</h3>
             <div class="skill-tags">
-              <span>React 19</span><span>Next.js</span><span>Vue.js</span><span>Nuxt</span><span>TypeScript</span><span>Tailwind CSS</span><span>Framer Motion</span><span>Three.js</span><span>Blazor</span>
+              <span><i class="devicon-react-original colored"></i> React 19</span>
+              <span><i class="devicon-nextjs-plain"></i> Next.js</span>
+              <span><i class="devicon-vuejs-plain colored"></i> Vue.js</span>
+              <span><i class="devicon-nuxtjs-plain colored"></i> Nuxt</span>
+              <span><i class="devicon-typescript-plain colored"></i> TypeScript</span>
+              <span><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</span>
+              <span><i class="devicon-threejs-original"></i> Three.js</span>
+              <span><i class="devicon-blazor-original colored"></i> Blazor</span>
             </div>
           </div>
           <div class="skill-category">
-            <h3><i class='bx bx-cloud'></i> DevOps & Architecture</h3>
+            <h3 data-i18n="about.devops"><i class='bx bx-cloud'></i> DevOps & Architecture</h3>
             <div class="skill-tags">
-              <span>Docker</span><span>Cloudflare</span><span>GitHub Actions</span><span>GitLab CI</span><span>Azure DevOps</span><span>Tailscale</span>
+              <span><i class="devicon-docker-plain colored"></i> Docker</span>
+              <span><i class="devicon-cloudflare-plain colored"></i> Cloudflare</span>
+              <span><i class="devicon-githubactions-plain colored"></i> GitHub Actions</span>
+              <span><i class="devicon-gitlab-plain colored"></i> GitLab CI</span>
+              <span><i class="devicon-azuredevops-plain colored"></i> Azure DevOps</span>
             </div>
           </div>
           <div class="skill-category">
-            <h3><i class='bx bx-brain'></i> Automation & AI</h3>
+            <h3 data-i18n="about.ai"><i class='bx bx-brain'></i> Automation & AI</h3>
             <div class="skill-tags">
-              <span>n8n</span><span>Gemini Pro</span><span>Anthropic API</span><span>Hatchet</span><span>Sanity CMS</span>
+              <span><img src="https://n8n.io/favicon.ico" width="16" height="16" style="vertical-align: middle;"> n8n</span>
+              <span><i class="devicon-google-plain colored"></i> Gemini Pro</span>
+              <span><i class="devicon-sanity-plain colored"></i> Sanity CMS</span>
             </div>
           </div>
         </div>
@@ -104,7 +155,7 @@
 
     <section id="experience" class="experience section-padding bg-alt">
       <div class="container">
-        <h2 class="section-title text-center">02. Experience</h2>
+        <h2 class="section-title text-center" data-i18n="exp.title">02. Experience</h2>
         
         <div class="timeline">
           
@@ -112,10 +163,10 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-header">
-                <h3>Software Engineer <span class="company">@ Hospi AI</span></h3>
-                <span class="timeline-date">Current</span>
+                <h3><span data-i18n="exp.hospi.role">Software Engineer</span> <span class="company">@ Hospi AI</span></h3>
+                <span class="timeline-date" data-i18n="exp.current">Current</span>
               </div>
-              <p class="timeline-desc">
+              <p class="timeline-desc" data-i18n="exp.hospi.desc">
                 Architecting and scaling the FastAPI backend for the HOSPI AI hospitality platform. Implementing staff/admin RBAC via Supabase Auth, guest PIN authentication flows, hotel operations REST APIs, and database migrations with Alembic. Optimizing complex database queries and managing structured application logging to ensure reliability for hospitality operations.
               </p>
               <div class="tech-stack">FastAPI • Python • Supabase • PostgreSQL • Alembic</div>
@@ -126,10 +177,10 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-header">
-                <h3>Fullstack Software Engineer <span class="company">@ InnovaAI</span></h3>
+                <h3><span data-i18n="exp.innova.role">Fullstack Software Engineer</span> <span class="company">@ InnovaAI</span></h3>
                 <span class="timeline-date">Nov 2025 - Jun 2026</span>
               </div>
-              <p class="timeline-desc">
+              <p class="timeline-desc" data-i18n="exp.innova.desc">
                 Built CartéRapide (SaaS digital business-card platform) and TempsCaisse (time-tracking SaaS). Designed complex Row-Level Security (RLS) models, full Cloudflare infrastructure (pipelines, routing, secure upload workers), and automated content generation workflows using n8n and Gemini Pro. Migrated services to Tailscale for zero-open-port security.
               </p>
               <div class="tech-stack">Nuxt • Vue.js • TypeScript • Cloudflare Workers • Stripe • Prisma</div>
@@ -140,10 +191,10 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-header">
-                <h3>Fullstack Software Engineer <span class="company">@ Red64</span></h3>
+                <h3><span data-i18n="exp.red64.role">Fullstack Software Engineer</span> <span class="company">@ Red64</span></h3>
                 <span class="timeline-date">Feb 2025 - Sep 2025</span>
               </div>
-              <p class="timeline-desc">
+              <p class="timeline-desc" data-i18n="exp.red64.desc">
                 Developed MediaPulse, an AI-assisted content monitoring platform. Built persona-driven workflows and orchestrated automated podcast ingestion using Hatchet and Supabase. Crafted highly accessible, animated interfaces with React 19, Radix UI, and Framer Motion, integrating with YouTube and PodcastIndex APIs.
               </p>
               <div class="tech-stack">React 19 • Django • FastAPI • Hatchet • Tailwind</div>
@@ -154,13 +205,27 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-header">
-                <h3>Fullstack Software Engineer <span class="company">@ Perceptyx</span></h3>
+                <h3><span data-i18n="exp.perceptyx.role">Fullstack Software Engineer</span> <span class="company">@ Perceptyx</span></h3>
                 <span class="timeline-date">Feb 2024 - Feb 2025</span>
               </div>
-              <p class="timeline-desc">
+              <p class="timeline-desc" data-i18n="exp.perceptyx.desc">
                 Developed Analytics Studio, serving interactive dashboards for survey feedback and sentiment analytics from a Snowflake data warehouse. Integrated GraphQL and REST data streams with Apollo and FastAPI, maintaining GitLab CI/CD pipelines and Docker imagery for rapid deployments.
               </p>
               <div class="tech-stack">Vue.js • GraphQL • FastAPI • Snowflake • Docker • GitLab CI</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3><span data-i18n="exp.alidade.role">Software Engineer</span> <span class="company">@ Alidade</span></h3>
+                <span class="timeline-date">Jun 2021 - Jan 2024</span>
+              </div>
+              <p class="timeline-desc" data-i18n="exp.alidade.desc">
+                Built a pharmaceutical CRM covering sales, inventory and field-activity tracking with Blazor Server, .NET 7, SignalR, Dapper and SQL Server. Delivered real-time activity notifications and management dashboards, applying SOLID principles, xUnit test coverage, and SonarQube quality gates.
+              </p>
+              <div class="tech-stack">Blazor • .NET 7 • SQL Server • SignalR • Azure DevOps</div>
             </div>
           </div>
 
@@ -170,46 +235,80 @@
 
     <section id="projects" class="projects section-padding">
       <div class="container">
-        <h2 class="section-title">03. Selected Work</h2>
+        <h2 class="section-title" data-i18n="proj.title">03. Selected Work</h2>
         
         <div class="project-grid">
           
-          <div class="project-card">
+          <div class="project-card parallax-container">
             <div class="project-content">
-              <div class="project-overline">Open Source WebGL</div>
+              <div class="project-overline" data-i18n="proj.hazeon.overline">Software Engineering Company</div>
               <h3 class="project-title">Hazeon</h3>
-              <p class="project-description">
-                A high-performance, multilingual static landing page built with HTML, GSAP, and Three.js. Features complex scroll-triggered animations and fluid 3D visual effects, bundled using esbuild for optimal loading speeds and SEO scores.
+              <p class="project-description" data-i18n="proj.hazeon.desc">
+                My software engineering company. A high-performance, multilingual digital presence built with HTML, GSAP, and Three.js. Features complex scroll-triggered animations and fluid 3D visual effects, bundled using esbuild for optimal loading speeds and SEO scores.
               </p>
               <div class="project-tech">
                 <span>GSAP</span><span>Three.js</span><span>HTML/CSS</span><span>esbuild</span>
               </div>
               <div class="project-links">
-                <a href="https://habib1010-tech.github.io/hazeon/" target="_blank" rel="noopener noreferrer"><i class='bx bx-link-external'></i> Live Demo</a>
-                <a href="https://github.com/habib1010-tech/hazeon" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i> Code</a>
+                <a href="https://habib1010-tech.github.io/hazeon/" target="_blank" rel="noopener noreferrer" class="magnetic"><i class='bx bx-link-external'></i> Live Demo</a>
+                <a href="https://github.com/habib1010-tech/hazeon" target="_blank" rel="noopener noreferrer" class="magnetic"><i class='bx bxl-github'></i> Code</a>
               </div>
             </div>
-            <div class="project-image" style="background: linear-gradient(135deg, #1f1f2e, #0f0f1a);">
-              <div class="placeholder-graphic" style="opacity: 0.5;">
-                <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" stroke-width="1" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              </div>
+            <div class="project-image parallax-img" style="background: var(--bg-alt); padding: 2rem;">
+              <img src="./hazeon-logo.png" alt="Hazeon Logo" style="max-width: 80%; max-height: 80%; object-fit: contain;">
             </div>
           </div>
 
-          <div class="project-card reverse">
+          <div class="project-card reverse parallax-container">
             <div class="project-content">
-              <div class="project-overline">Backend Architecture</div>
+              <div class="project-overline" data-i18n="proj.hospi.overline">Backend Architecture</div>
               <h3 class="project-title">Hospi AI Platform</h3>
-              <p class="project-description">
+              <p class="project-description" data-i18n="proj.hospi.desc">
                 Engineered the core backend service powering the hospitality platform. Implemented secure Supabase Auth, robust guest JWT validation, and scalable REST APIs for hotel operations, guest registration, and event management using FastAPI and PostgreSQL.
               </p>
               <div class="project-tech">
                 <span>FastAPI</span><span>Supabase</span><span>PostgreSQL</span><span>Docker</span>
               </div>
             </div>
-            <div class="project-image" style="background: linear-gradient(135deg, #0d1b2a, #1b263b);">
-              <div class="placeholder-graphic" style="opacity: 0.5;">
-                <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" stroke-width="1" fill="none"><path d="M4 7v10c0 2 1.5 3 3 3h10c1.5 0 3-1 3-3V7c0-2-1.5-3-3-3H7c-1.5 0-3 1-3 3z"/><path d="M9 12h6M12 9v6"/></svg>
+            <div class="project-image parallax-img" style="background: var(--bg-alt); padding: 2rem;">
+              <img src="./hospi-logo.png" alt="Hospi AI Logo" style="max-width: 80%; max-height: 80%; object-fit: contain;">
+            </div>
+          </div>
+
+          <div class="project-card parallax-container">
+            <div class="project-content">
+              <div class="project-overline" data-i18n="proj.carte.overline">SaaS Platform</div>
+              <h3 class="project-title">carteRapide</h3>
+              <p class="project-description" data-i18n="proj.carte.desc">
+                carteRapide: A digital business-card platform built with Vue, Nuxt, and Stripe. Because paper business cards are so 1999 and the trees deserve better.
+              </p>
+              <div class="project-tech">
+                <span>Vue.js</span><span>Nuxt</span><span>Stripe</span><span>Prisma</span>
+              </div>
+            </div>
+            <div class="project-image parallax-img" style="background: var(--bg-alt); padding: 2rem; display: flex; align-items: center; justify-content: center;">
+              <div style="text-align: center; color: var(--accent-1); font-family: var(--font-mono);">
+                <i class='bx bx-id-card' style="font-size: 5rem; margin-bottom: 1rem;"></i>
+                <br>[ Digital Card Generator ]
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reverse parallax-container">
+            <div class="project-content">
+              <div class="project-overline" data-i18n="proj.media.overline">AI Platform</div>
+              <h3 class="project-title">MediaPulse</h3>
+              <p class="project-description" data-i18n="proj.media.desc">
+                MediaPulse: An AI-assisted content monitoring platform built with React 19 and Django. It watches content so you don't have to.
+              </p>
+              <div class="project-tech">
+                <span>React 19</span><span>Django</span><span>Hatchet</span><span>Tailwind</span>
+              </div>
+            </div>
+            <div class="project-image parallax-img" style="background: var(--bg-alt); padding: 2rem; display: flex; align-items: center; justify-content: center;">
+              <div style="text-align: center; color: var(--accent-2); font-family: var(--font-mono);">
+                <i class='bx bx-bot' style="font-size: 5rem; margin-bottom: 1rem;"></i>
+                <br>[ AI Overlord in Training ]
               </div>
             </div>
           </div>
@@ -219,13 +318,13 @@
     </section>
 
     <section id="contact" class="contact section-padding bg-alt">
-      <div class="container text-center">
-        <h2 class="section-title">04. What's Next?</h2>
-        <h3 class="contact-heading">Let's build something extraordinary.</h3>
-        <p class="contact-desc">
+      <div class="container text-center reveal-text">
+        <h2 class="section-title" data-i18n="contact.title">04. What's Next?</h2>
+        <h3 class="contact-heading" data-i18n="contact.heading">Let's build something extraordinary.</h3>
+        <p class="contact-desc" data-i18n="contact.desc">
           I'm always open to discussing new opportunities, architecture challenges, or innovative projects. Whether you have a question or just want to say hi, my inbox is open!
         </p>
-        <a href="mailto:habibazzabou50@gmail.com" class="btn btn-primary contact-btn">Say Hello</a>
+        <a href="mailto:habibazzabou50@gmail.com" class="btn btn-primary contact-btn magnetic" data-i18n="contact.btn">Say Hello</a>
       </div>
     </section>
   </main>
@@ -233,11 +332,11 @@
   <footer>
     <div class="footer-container">
       <div class="social-links">
-        <a href="https://github.com/habib1010-tech" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
-        <a href="mailto:habibazzabou50@gmail.com" aria-label="Email"><i class='bx bx-envelope'></i></a>
+        <a href="https://github.com/habib1010-tech" target="_blank" aria-label="GitHub" class="magnetic"><i class='bx bxl-github'></i></a>
+        <a href="mailto:habibazzabou50@gmail.com" aria-label="Email" class="magnetic"><i class='bx bx-envelope'></i></a>
       </div>
-      <p class="copyright">Designed & Built by Habib Azzabou</p>
-      <div class="tech-credit">Powered by Vanilla JS, Three.js & Vite</div>
+      <p class="copyright" data-i18n="footer.desc">Designed & Built by Habib Azzabou</p>
+      <div class="tech-credit" data-i18n="footer.credit">Powered by Vanilla JS, Three.js & Vite</div>
     </div>
   </footer>
 
