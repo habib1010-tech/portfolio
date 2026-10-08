@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Habib Azzabou - Fullstack Software Engineer portfolio. Building scalable, data-driven, and AI-enhanced platforms." />
+  <title>Habib Azzabou | Fullstack Software Engineer</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  
+  <div class="loader">
+    <div class="loader-text" id="loader-text">Loading <span class="dot">.</span></div>
+    <div class="loader-progress"></div>
+  </div>
+
+  <div id="webgl-container"></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">HA<span>.</span></div>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link btn-outline">Contact Me</a>
+      </div>
+      <div class="mobile-toggle">
+        <i class='bx bx-menu'></i>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">Available for opportunities</div>
+        <h1 class="hero-title">
+          <span class="hero-title-line">Habib</span>
+          <span class="hero-title-line accent-gradient">Azzabou</span>
+        </h1>
+        <p class="hero-subtitle">
+          Fullstack Software Engineer building scalable, data-driven, and AI-enhanced platforms.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            Explore My Work
+            <i class='bx bx-right-arrow-alt'></i>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            Get In Touch
+          </a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about section-padding">
+      <div class="container split-layout">
+        <div class="section-heading sticky-col">
+          <h2 class="section-title">01. About Me</h2>
+          <p class="section-desc">
+            With 5 years of experience spanning North America and Europe, I specialize in shipping end-to-end features for fully remote, agile teams. From robust FastAPI and .NET backends to highly interactive modern frontends, I focus on code quality, automated testing, and scalable cloud architectures.
+          </p>
+        </div>
+        <div class="skills-col">
+          <div class="skill-category">
+            <h3><i class='bx bx-server'></i> Backend & APIs</h3>
+            <div class="skill-tags">
+              <span>FastAPI</span><span>Python</span><span>.NET 7</span><span>C#</span><span>Django</span><span>Supabase</span><span>PostgreSQL</span><span>Snowflake</span><span>REST</span><span>GraphQL</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class='bx bx-window-alt'></i> Frontend</h3>
+            <div class="skill-tags">
+              <span>React 19</span><span>Next.js</span><span>Vue.js</span><span>Nuxt</span><span>TypeScript</span><span>Tailwind CSS</span><span>Framer Motion</span><span>Three.js</span><span>Blazor</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class='bx bx-cloud'></i> DevOps & Architecture</h3>
+            <div class="skill-tags">
+              <span>Docker</span><span>Cloudflare</span><span>GitHub Actions</span><span>GitLab CI</span><span>Azure DevOps</span><span>Tailscale</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class='bx bx-brain'></i> Automation & AI</h3>
+            <div class="skill-tags">
+              <span>n8n</span><span>Gemini Pro</span><span>Anthropic API</span><span>Hatchet</span><span>Sanity CMS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="experience section-padding bg-alt">
+      <div class="container">
+        <h2 class="section-title text-center">02. Experience</h2>
+        
+        <div class="timeline">
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Software Engineer <span class="company">@ Hospi AI</span></h3>
+                <span class="timeline-date">Current</span>
+              </div>
+              <p class="timeline-desc">
+                Architecting and scaling the FastAPI backend for the HOSPI AI hospitality platform. Implementing staff/admin RBAC via Supabase Auth, guest PIN authentication flows, hotel operations REST APIs, and database migrations with Alembic. Optimizing complex database queries and managing structured application logging to ensure reliability for hospitality operations.
+              </p>
+              <div class="tech-stack">FastAPI • Python • Supabase • PostgreSQL • Alembic</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Fullstack Software Engineer <span class="company">@ InnovaAI</span></h3>
+                <span class="timeline-date">Nov 2025 - Jun 2026</span>
+              </div>
+              <p class="timeline-desc">
+                Built CartéRapide (SaaS digital business-card platform) and TempsCaisse (time-tracking SaaS). Designed complex Row-Level Security (RLS) models, full Cloudflare infrastructure (pipelines, routing, secure upload workers), and automated content generation workflows using n8n and Gemini Pro. Migrated services to Tailscale for zero-open-port security.
+              </p>
+              <div class="tech-stack">Nuxt • Vue.js • TypeScript • Cloudflare Workers • Stripe • Prisma</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Fullstack Software Engineer <span class="company">@ Red64</span></h3>
+                <span class="timeline-date">Feb 2025 - Sep 2025</span>
+              </div>
+              <p class="timeline-desc">
+                Developed MediaPulse, an AI-assisted content monitoring platform. Built persona-driven workflows and orchestrated automated podcast ingestion using Hatchet and Supabase. Crafted highly accessible, animated interfaces with React 19, Radix UI, and Framer Motion, integrating with YouTube and PodcastIndex APIs.
+              </p>
+              <div class="tech-stack">React 19 • Django • FastAPI • Hatchet • Tailwind</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Fullstack Software Engineer <span class="company">@ Perceptyx</span></h3>
+                <span class="timeline-date">Feb 2024 - Feb 2025</span>
+              </div>
+              <p class="timeline-desc">
+                Developed Analytics Studio, serving interactive dashboards for survey feedback and sentiment analytics from a Snowflake data warehouse. Integrated GraphQL and REST data streams with Apollo and FastAPI, maintaining GitLab CI/CD pipelines and Docker imagery for rapid deployments.
+              </p>
+              <div class="tech-stack">Vue.js • GraphQL • FastAPI • Snowflake • Docker • GitLab CI</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects section-padding">
+      <div class="container">
+        <h2 class="section-title">03. Selected Work</h2>
+        
+        <div class="project-grid">
+          
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-overline">Open Source WebGL</div>
+              <h3 class="project-title">Hazeon</h3>
+              <p class="project-description">
+                A high-performance, multilingual static landing page built with HTML, GSAP, and Three.js. Features complex scroll-triggered animations and fluid 3D visual effects, bundled using esbuild for optimal loading speeds and SEO scores.
+              </p>
+              <div class="project-tech">
+                <span>GSAP</span><span>Three.js</span><span>HTML/CSS</span><span>esbuild</span>
+              </div>
+              <div class="project-links">
+                <a href="https://habib1010-tech.github.io/hazeon/" target="_blank" rel="noopener noreferrer"><i class='bx bx-link-external'></i> Live Demo</a>
+                <a href="https://github.com/habib1010-tech/hazeon" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i> Code</a>
+              </div>
+            </div>
+            <div class="project-image" style="background: linear-gradient(135deg, #1f1f2e, #0f0f1a);">
+              <div class="placeholder-graphic" style="opacity: 0.5;">
+                <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" stroke-width="1" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reverse">
+            <div class="project-content">
+              <div class="project-overline">Backend Architecture</div>
+              <h3 class="project-title">Hospi AI Platform</h3>
+              <p class="project-description">
+                Engineered the core backend service powering the hospitality platform. Implemented secure Supabase Auth, robust guest JWT validation, and scalable REST APIs for hotel operations, guest registration, and event management using FastAPI and PostgreSQL.
+              </p>
+              <div class="project-tech">
+                <span>FastAPI</span><span>Supabase</span><span>PostgreSQL</span><span>Docker</span>
+              </div>
+            </div>
+            <div class="project-image" style="background: linear-gradient(135deg, #0d1b2a, #1b263b);">
+              <div class="placeholder-graphic" style="opacity: 0.5;">
+                <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" stroke-width="1" fill="none"><path d="M4 7v10c0 2 1.5 3 3 3h10c1.5 0 3-1 3-3V7c0-2-1.5-3-3-3H7c-1.5 0-3 1-3 3z"/><path d="M9 12h6M12 9v6"/></svg>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section-padding bg-alt">
+      <div class="container text-center">
+        <h2 class="section-title">04. What's Next?</h2>
+        <h3 class="contact-heading">Let's build something extraordinary.</h3>
+        <p class="contact-desc">
+          I'm always open to discussing new opportunities, architecture challenges, or innovative projects. Whether you have a question or just want to say hi, my inbox is open!
+        </p>
+        <a href="mailto:habibazzabou50@gmail.com" class="btn btn-primary contact-btn">Say Hello</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="social-links">
+        <a href="https://github.com/habib1010-tech" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+        <a href="mailto:habibazzabou50@gmail.com" aria-label="Email"><i class='bx bx-envelope'></i></a>
+      </div>
+      <p class="copyright">Designed & Built by Habib Azzabou</p>
+      <div class="tech-credit">Powered by Vanilla JS, Three.js & Vite</div>
+    </div>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
